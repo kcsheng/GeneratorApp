@@ -1,0 +1,17 @@
+<h2>Books</h2>
+<p id="notice"><%= notice %></p>
+<hr>
+<div>
+  <% @books.each do |book| %>
+    <div class="content">
+              <td><%= book.title %></td>
+              <td><%= book.summary %></td>
+            <p><%= link_to 'Show', book %></p>
+      <p><%= link_to 'Edit', edit_book_path(book) %></p>
+      <p><%= link_to 'Delete', book, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    </div>
+  <% end %>
+</div>
+<br>
+
+<%= link_to 'Create a new Book', new_book_path %>
